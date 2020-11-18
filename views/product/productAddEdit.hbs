@@ -1,0 +1,40 @@
+<!-- Obtaining value from the product controller -->
+ 
+<h3>{{viewTitle}}</h3>
+<form action="/product" method="POST">
+<input type="hidden" name="_id" value="{{product._id}}">
+
+
+
+<div class = "form-group">
+<label>User Id</label>
+<input type="text" class="form-control" name="userId" placeholder="User Id" value="{{product.userId}}">
+ 
+<div class="text-danger">
+{{product.userIdError}}</div>
+</div>
+
+<div class = "form-group">
+<label>View Date</label>
+<input type="date" class="form-control" name="viewDate" placeholder="View Date" value="{{product.viewDate}} " required>
+</div>
+
+<div class = "form-group">
+<label>Product ID</label>
+
+<select class="form-control" name="productId" style="width:200px;" value="{{product.productId}}">
+                          <option value="123" selected>123</option>
+                            <option value="456">456</option>
+                        
+                    </select>
+
+</div>
+
+
+
+
+<div class="form-group">
+<button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+<a class="btn btn-secondary" href="/product/list"><i class="fa fa-list-alt"></i> View All products</a>
+</div>
+</form>

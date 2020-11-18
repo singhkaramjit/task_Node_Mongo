@@ -1,0 +1,59 @@
+<div>
+    <a class="btn btn-secondary" href="/product"><i class="fa fa-plus"></i> Create New</a>
+
+    <h3 align="center">Product List</h3>
+</div>
+
+<div>
+    <form action="/product/show" method="GET">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>
+                    <select class="form-control" name="searchProductId" style="width:200px;">
+                        {{#each productId}}
+                            <option value={{this}}>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </th>
+                <th>Date From</th>
+                <th><input type="date" class="form-control" name="searchDateFrom" placeholder="Date From"></th>
+                <th>Date To</th>
+                <th><input type="date" class="form-control" name="searchDateTo" placeholder="Date To"></th>
+                <th>Search</th>
+                <th><button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    </form>
+</div>
+
+<div> Total users who viewed a product {{pTotalUsers}} </div>
+<div> Total unique users who viewed a product {{pTotalDistinctUsers}} </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>View Date</th>
+            <th>Product Id</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr align="center">
+            <td>{{this.userId}}</td>
+            <td>{{this.viewDate}}</td>
+            <td>{{this.productId}}</td>
+            <td>
+
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
